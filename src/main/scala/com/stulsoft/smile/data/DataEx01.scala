@@ -8,13 +8,10 @@ import smile.data.DataFrame
 
 object DataEx01:
   private def createDataFrame1(): Unit =
-    val data = Array.ofDim[Double](2, 2)
-    data(0)(0) = 1.0
-    data(0)(1) = 2.0
-    data(1)(0) = 2.0
-    data(1)(1) = 4.0
-    val df = DataFrame.of(data, "X", "Y")
+    val data = Array(Array(1.0, 2.0), Array(2.0, 4.0))
+    val df = DataFrame.of(data, "Русский Xxx", "Yyy")
     println(s"names: ${df.names().toSeq}")
+
   def main(args: Array[String]): Unit =
     println("==>main")
     createDataFrame1()

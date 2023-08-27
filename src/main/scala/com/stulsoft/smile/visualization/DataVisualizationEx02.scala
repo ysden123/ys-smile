@@ -5,9 +5,11 @@
 package com.stulsoft.smile.visualization
 
 import smile.data.*
-import smile.plot.swing.{Canvas, ScatterPlot}
+import smile.plot.swing.plot
 
-object DataVisualizationEx01:
+import java.awt.Color
+
+object DataVisualizationEx02:
   def main(args: Array[String]): Unit =
     println("==>main")
     val data: Array[Array[Double]] = Array(
@@ -17,9 +19,7 @@ object DataVisualizationEx01:
       Array(4.0, 5.0),
       Array(5.0, 3.0))
 
-    val df: DataFrame = DataFrame.of(data)
+    val df: DataFrame = DataFrame.of(data, "Первый", "Второй")
 
-    val plotter: ScatterPlot = ScatterPlot.of (data)
-    val canvas: Canvas = plotter.canvas()
-    canvas.setAxisLabels("Первый", "Второй")
+    val canvas = plot(df, "Первый", "Второй", '*', Color.RED)
     canvas.window()
