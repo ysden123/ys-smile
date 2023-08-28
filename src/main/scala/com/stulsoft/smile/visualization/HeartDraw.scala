@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. StulSoft
+ */
+
 package com.stulsoft.smile.visualization
 
 import smile.plot.swing.line
